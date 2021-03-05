@@ -30,7 +30,6 @@ const Home = () =>
 	const {data, isError} = useQuery("basics", getUserData)
 	const res = useQuery("basics", getUserData)
 
-	console.log(res)
 
 	if(isError){
 		return <div>
@@ -53,15 +52,15 @@ const Home = () =>
 
 			{/* Hero */}
 			{data ? 
-				<main>
-					<div className='py-12'>
+				<main className='pb-12'>
+					<div className='pt-12'>
 						<div className=''>
 							<div className='flex justify-center items-center'>
 								<div className='rounded-full w-20 h-20 lg:w-32 lg:h-32 rounded-full overflow-hidden'>
 									<img src={data[0].data.images[0].url} alt="user" />
 								</div>
 							</div>
-								<h1 className=' text-center mt-4 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 text-transparent bg-clip-text text-3xl sm:text-4xl lg:text-5xl ml-6 '>Welcome, {data[0].data.display_name}.</h1>
+							<h1 className=' text-center mt-7 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 text-transparent bg-clip-text text-3xl sm:text-4xl lg:text-5xl ml-6 '>Welcome, {data[0].data.display_name}.</h1>
 						</div>
 					</div>
 					

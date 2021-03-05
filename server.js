@@ -1,8 +1,7 @@
-const path = require('path')
-require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
+require('dotenv').config()
 const express = require('express')
+const path = require('path')
 const axios = require("axios")
-// const cors = require("cors")
 const cookieParser = require('cookie-parser')
 const querystring = require('querystring')
 
@@ -16,17 +15,17 @@ app.use(express.static(path.resolve(__dirname, '../frontend/build')))
 // ❇ Get constants
 const client_id = process.env.client_id
 const client_secret = process.env.client_secret
-const NODE_ENV = process.env.NODE_ENV
+const name = process.env.name
 
 const PORT = process.env.PORT || 5000
 
-let client_uri = process.env.FRONTEND_URI || 'http://localhost:3000'
+let client_uri = process.env.FRONTEND_URI || 'http://localhost:5000'
 let redirect_uri = process.env.REDIRECT_URI || 'http://localhost:5000/callback'
 
 
 console.log(client_id)
 console.log(client_secret)
-console.log(NODE_ENV)
+console.log(name)
 
 
 

@@ -13,7 +13,6 @@ const Search = () => {
 			search(query.replace(' ', '+'))
 			.then(res => setResults(res.data.artists.items))
 		}
-
 	}, [query])
 
 	
@@ -22,7 +21,7 @@ const Search = () => {
 			<div className='w-9/12'>
 				<div className='flex flex-col justify-center'>
 					<h3 className='text-5xl heading mr-4'>Search</h3>
-					<input className='mt-3 text-2xl py-1 w-1/2 outline-none bg-transparent border-2 border-blue-800 rounded-full text-gray-400 px-3' type="text" value={query} onChange={(e)=>setQuery(e.target.value)} />
+					<input className='mt-3 text-2xl py-1 w-56 lg:w-64 outline-none bg-transparent border-2 border-blue-800 rounded-full text-gray-400 px-3' type="text" value={query} onChange={(e)=>setQuery(e.target.value)} />
 				</div>
 				
 				<div className=' w-1/2 mt-3'>

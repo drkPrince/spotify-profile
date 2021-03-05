@@ -21,7 +21,6 @@ const queryClient = new QueryClient()
 
 function App() {
 
-	console.log(accessToken)
 
 	const loginURL = process.env.NODE_ENV !== 'production'
 	    ? 'http://localhost:5000/login'
@@ -61,7 +60,7 @@ function App() {
 					</div>
 
 					<QueryClientProvider client={queryClient}>
-						<div className='px-4 lg:ml-48 lg:px-16 lg:py-8 bg-black text-gray-100 min-h-screen'>
+						<div className='px-4 lg:ml-48 lg:px-16 lg:py-6 bg-black text-gray-100 min-h-screen'>
 			        		<Switch>
 
 			        			<Route exact path='/'>
@@ -103,7 +102,7 @@ function App() {
         		</div>
         }
     </div>
-    );
+    )
 }
 
 export default App;

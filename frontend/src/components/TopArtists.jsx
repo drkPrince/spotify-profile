@@ -49,14 +49,14 @@ const TopArtists = () =>
 	return (
 		<div className='py-12 px-4 md:py-28 md:px-12'>
 			<div className='flex text-gray-700 '>
-				<h2 ref={weekRef} className='mr-4 px-2 py-1 cursor-pointer hover:text-gray-300' onClick={bringWeeks}>4 Weeks</h2>	
-				<h2 ref={monthRef} className='mr-4 px-2 py-1 cursor-pointer hover:text-gray-300 active-tab' onClick={bringMonths}>6 Months</h2>	
-				<h2 ref={yearRef} className='mr-4 px-2 py-1 cursor-pointer hover:text-gray-300' onClick={bringYear}>Over an Year</h2>	
+				<h2 ref={weekRef} className='mr-4 px-2 py-1 cursor-pointer hover:text-gray-300 text-sm md:text-base' onClick={bringWeeks}>4 Weeks</h2>	
+				<h2 ref={monthRef} className='mr-4 px-2 py-1 cursor-pointer hover:text-gray-300 text-sm md:text-base active-tab' onClick={bringMonths}>6 Months</h2>	
+				<h2 ref={yearRef} className='mr-4 px-2 py-1 cursor-pointer hover:text-gray-300 text-sm md:text-base' onClick={bringYear}>Over an Year</h2>	
 			</div>
 
 			{artists ?
 				<div className='mt-12'>
-					<h3 className="text-2xl heading">Your Favourite Artists</h3>
+					<h3 className="text-2xl heading">Your Most Favourite Artists</h3>
 					<div className='flex flex-wrap'>
 						{artists.map(artist => 
 							<Link to={`/artist/${artist.id}`} key={artist.id}>

@@ -49,9 +49,9 @@ const TopTracks = () =>
 	return (
 		<div className='py-12 px-4 md:py-28 md:px-12'>
 			<div className='flex text-gray-700'>
-				<h2 ref={weekRef} className='mr-4   px-2 py-1 cursor-pointer hover:text-gray-200' onClick={bringWeeks}>4 Weeks</h2>	
-				<h2 ref={monthRef} className='mr-4   px-2 py-1 cursor-pointer hover:text-gray-200 active-tab' onClick={bringMonths}>6 Months</h2>	
-				<h2 ref={yearRef} className='mr-4   px-2 py-1 cursor-pointer hover:text-gray-200' onClick={bringYear}>Over an Year</h2>	
+				<h2 ref={weekRef} className='mr-4   px-2 py-1 cursor-pointer hover:text-gray-200 text-sm md:text-base' onClick={bringWeeks}>4 Weeks</h2>	
+				<h2 ref={monthRef} className='mr-4   px-2 py-1 cursor-pointer hover:text-gray-200 text-sm md:text-base active-tab' onClick={bringMonths}>6 Months</h2>	
+				<h2 ref={yearRef} className='mr-4   px-2 py-1 cursor-pointer hover:text-gray-200 text-sm md:text-base' onClick={bringYear}>Over an Year</h2>	
 			</div>
 
 			{tracks ?

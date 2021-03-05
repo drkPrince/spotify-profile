@@ -15,7 +15,7 @@ export const genreCleaner = (ar) => {
 
 export const SingleCard = ({imageURL, itemName}) => {
 	return (
-		<div className='bg-gradient-to-b from-card to-black mr-3 md:mr-6 mt-4 w-36 md:w-40 shadow-2xl rounded-sm'>
+		<div className='bg-gradient-to-b from-card to-black mr-3 md:mr-6 mt-4 w-36 md:w-40 shadow-2xl rounded-sm transition-transform sm:duration-100 transform hover:scale-110'>
 			<div className='px-4 w-full'>
 				<div className='image pt-4 opacity-75'>
 					<img src={imageURL} alt="" className='w-32 h-36 object-cover'/>
@@ -32,7 +32,7 @@ export const SingleCard = ({imageURL, itemName}) => {
 export const DoubleCard = ({imageURL, subItem, itemName}) => 
 {
 	return (
-		<div className='bg-gradient-to-b from-card to-black mr-3 md:mr-6 mt-4 w-36 md:w-40 shadow-2xl rounded-sm'>
+		<div className='bg-gradient-to-b from-card to-black mr-3 md:mr-6 mt-4 w-36 md:w-40 shadow-2xl rounded-sm transition-transform sm:duration-100 transform hover:scale-110'>
 			<div className='px-4'>
 				<div className='image pt-4 opacity-75'>
 					<img src={imageURL} alt="" className='w-32 h-32 object-cover'/>
@@ -73,16 +73,6 @@ export const TrackItem = ({songName, songArtists, picURL}) => {
 }
 
 
-export const FollowUnfollow = (follows) => 
-{
-	return (
-		<div className='mt-4 cursor-pointer'>
-			{follows.follows ? 
-				<h3 className='rounded-full text-gray-200 inline-block text-sm px-3 py-1'>Unfollow</h3> : 
-				<h3 className='rounded-full inline-block text-gray-400 text-sm px-3 py-1'>Follow</h3>}
-		</div>
-	)
-}
 
 
 export const convertMS = ( milliseconds ) =>
