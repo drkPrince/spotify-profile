@@ -54,30 +54,27 @@ const Home = () =>
 			{data ? 
 				<main className='pb-12'>
 					<div className='pt-12'>
-						<div className=''>
-							<div className='flex justify-center items-center'>
-								<div className='rounded-full w-20 h-20 lg:w-32 lg:h-32 rounded-full overflow-hidden'>
-									<img src={data[0].data.images[0].url} alt="user" />
-								</div>
-							</div>
-							<h1 className=' text-center mt-7 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 text-transparent bg-clip-text text-3xl sm:text-4xl lg:text-5xl ml-6 '>Welcome, {data[0].data.display_name}.</h1>
-						</div>
+						<h1 className='text-center text-3xl sm:text-4xl lg:text-4xl'>
+							<span className='text-gray-500'>Hi, </span>
+							<span className='bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 text-transparent bg-clip-text'>{data[0].data.display_name}.</span>
+							👋
+						</h1>
 					</div>
 					
 					
 					{/* Fave Artists */}
 					
-					<div className='mt-10 md:mt-20'>
+					<div className='mt-10 md:mt-16'>
 						<div className="flex justify-start items-center">
-							<h2 className='text-xl lg:text-2xl heading'>Artists you Love The Most</h2>
+							<h2 className='text-xl lg:text-2xl heading'>Artists you love the most</h2>
 						</div>
-						<div className="flex justify-start lg:justify-between flex-wrap">
+						<div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-x-8 gap-y-2">
 							{data[1].data.items.map(artist => 
-								<Link to={`artist/${artist.id}`} key={artist.id} className='hover:fil'>
+								<Link to={`artist/${artist.id}`} key={artist.id}>
 									<SingleCard imageURL={artist.images[1].url} itemName={artist.name} key={artist.name}/>
 								</Link>
 							)}
-							<Link to='/artist' className='bg-gradient-to-b from-gray-900 to-black mr-3 md:mr-6 mt-4 w-36 md:w-40 h-44 flex justify-center items-center text-gray-500 hover:bg-gray-700'>
+							<Link to='/artist' className='bg-gradient-to-b from-gray-900 to-black mr-3 md:mr-6 mt-4 w-36 md:w-40 h-44 flex justify-center items-center text-gray-500 hover:text-gray-200 rounded'>
 								<h2>See More</h2>
 							</Link>
 						</div>
@@ -87,15 +84,15 @@ const Home = () =>
 					
 					<div className='mt-10 md:mt-20'>
 						<div className="flex justify-start items-center">
-							<h2 className='text-xl lg:text-2xl heading'>Your Top Tracks</h2>
+							<h2 className='text-xl lg:text-2xl heading'>Your most favourite tracks</h2>
 						</div>
-						<div className="flex justify-start lg:justify-between flex-wrap">
+						<div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-x-8  gap-y-2">
 							{data[2].data.items.map(track => 
 								<Link to={`track/${track.id}`} key={track.id}>
 									<DoubleCard imageURL={track.album.images[1].url} itemName={track.name} subItem={track.artists} key={track.name}/>
 								</Link>
 							)}
-							<Link to='/track'  className='bg-gradient-to-b from-gray-900 to-black mr-3 md:mr-6 mt-4 w-36 md:w-40 h-44 flex justify-center items-center text-gray-500 hover:bg-gray-700'>
+							<Link to='/track'  className='bg-gradient-to-b from-gray-900 to-black mr-3 md:mr-6 mt-4 w-36 md:w-40 h-44 flex justify-center items-center text-gray-500 hover:text-gray-200 rounded'>
 								<h2>See More</h2>
 							</Link>
 						</div>
@@ -105,20 +102,20 @@ const Home = () =>
 					{/* Recently Played */}
 					
 					<div className='mt-10 md:mt-20 w-full'>
-						<h2 className='text-xl lg:text-2xl heading'>Recently played Tracks</h2>
+						<h2 className='text-xl lg:text-2xl heading'>Recently played tracks</h2>
 						<div className='mt-1 w-full'>
 							<div className="table flex justify-between w-full">
 					
-								<div className="flex text-gray-700 text-xs lg:text-sm mb-4 tracking-wider sticky top-0 pt-8 bg-black w-full justify-between border-bottom">
-									<div className='w-12/12 lg:w-5/12 text-left'>TRACK</div>
-									<div className='w-4/12 hidden lg:block text-left '>ALBUM</div>
-									<div className='w-1/12 text-left hidden lg:block'>DURATION</div>
+								<div className="w-3/4 lg:w-auto flex justify-between text-gray-700 mb-4 tracking-wider text-sm border-gray-800 sticky top-0 pt-8 bg-black border-bottom">
+									<div className='w-12/12 lg:w-7/12 text-left'>TRACK</div>
+									<div className='w-4/12 hidden lg:block text-left'>ALBUM</div>
+									<div className='w-1/12 hidden lg:block text-left'>DURATION</div>
 								</div>
 					
 								<div className="mt-6">
 									{data[5].data.items.map(song => 
-										<div className="row flex text-gray-400 justify-between" key={song.played_at}>
-											<div className='w-12/12 lg:w-5/12'>
+										<div className="lg:flex text-gray-400 justify-between" key={song.played_at}>
+											<div className='lg:w-7/12 truncate overflow-x-hidden'>
 												<Link to={`track/${song.track.id}`}>
 													<TrackItem picURL={song.track.album.images[2].url} songName={song.track.name} songArtists={song.track.artists}/>
 												</Link>
@@ -160,4 +157,24 @@ export default Home
 		</div>
 	</div>	
 </div>
+
+
+
+<div className='pt-12'>
+	<div>
+		<div className='flex justify-center items-center'>
+			<div className='rounded-full w-20 h-20 lg:w-32 lg:h-32 rounded-full overflow-hidden'>
+				<img src={data[0].data.images[0].url} alt="user" />
+			</div>
+		</div>
+		<h1 className='text-center mt-7 text-3xl sm:text-4xl lg:text-5xl ml-6 '>
+			<span className='text-gray-500'>Welcome, </span>
+			<span className='bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 text-transparent bg-clip-text'>{data[0].data.display_name}.</span>
+		</h1>
+	</div>
+</div>
+
+
+
+
  */

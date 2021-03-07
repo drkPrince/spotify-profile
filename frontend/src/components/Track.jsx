@@ -113,7 +113,7 @@ const Song = () =>
 							{legends.map(legend => 
 								<div className=' mb-6' key={legend.name}>
 									<h3 className='text-gray-300'>{legend.name}</h3>
-									<p className='text-gray-700'>{legend.description}</p>
+									<p className='text-gray-600'>{legend.description}</p>
 								</div>
 							)}
 								

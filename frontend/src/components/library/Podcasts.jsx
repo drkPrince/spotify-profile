@@ -18,7 +18,7 @@ const Podcasts = () => {
 		<div>
 			<h3 className='text-2xl heading'>Your Podcasts</h3>
 			{podcasts ? 
-				<div className='flex flex-wrap'>
+				<div className='grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-5'>
 					{podcasts.items.map(pod => 
 						<Link to={`/library/podcasts/${pod.show.id}`} key={pod.id}>
 							<DoubleCard itemName={pod.show.name} imageURL={pod.show.images[1].url} subItem={pod.show.publisher}/>

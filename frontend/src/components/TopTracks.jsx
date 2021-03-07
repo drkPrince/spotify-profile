@@ -56,8 +56,8 @@ const TopTracks = () =>
 
 			{tracks ?
 				<div className='mt-12'>
-					<h3 className="text-2xl heading">Your Most Favourite Songs</h3>
-					<div className='flex flex-wrap'>
+					<h3 className="text-2xl heading">Your most favourite songs</h3>
+					<div className='grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-5'>
 						{tracks.map(track => 
 							<Link to={`/track/${track.id}`} key={track.id}>
 								<DoubleCard imageURL={track.album.images[1].url} itemName={track.name} subItem={track.artists}/>

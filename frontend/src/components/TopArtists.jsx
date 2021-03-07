@@ -56,8 +56,8 @@ const TopArtists = () =>
 
 			{artists ?
 				<div className='mt-12'>
-					<h3 className="text-2xl heading">Your Most Favourite Artists</h3>
-					<div className='flex flex-wrap'>
+					<h3 className="text-2xl heading">Your most favourite artists</h3>
+					<div className=' grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-5'>
 						{artists.map(artist => 
 							<Link to={`/artist/${artist.id}`} key={artist.id}>
 								<SingleCard imageURL={artist.images[2].url} itemName={artist.name}/>
