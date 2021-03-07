@@ -26,7 +26,7 @@ function App() {
 
 	const loginURL = process.env.NODE_ENV !== 'production'
 	    ? 'http://localhost:5000/login'
-	    : 'https://stark-brook-75138.herokuapp.com/login'
+	    : 'https://sprofile.herokuapp.com/login'
 
 
     return (
