@@ -7,19 +7,19 @@ import axios from 'axios'
 const gethashParams = () => {
     const hashParams = {}
     var e, r = /([^&;=]+)=?([^&;]*)/g,
-    q = window.location.hash.substring(1);
+    q = window.location.hash.substring(1)
 
     while ( e = r.exec(q)) {
         hashParams[e[1]] = decodeURIComponent(e[2])
     }
-    return hashParams;
+    return hashParams
 }
 
 const setTokenTimestamp = () => window.localStorage.setItem('spotify_token_timestamp', Date.now())
-const setLocalRefreshToken = token => window.localStorage.setItem('spotify_refresh_token', token);
+const setLocalRefreshToken = token => window.localStorage.setItem('spotify_refresh_token', token)
 const setLocalAccessToken = token => {
     setTokenTimestamp();
-    window.localStorage.setItem('spotify_access_token', token);
+    window.localStorage.setItem('spotify_access_token', token)
 }
 
 
@@ -38,7 +38,6 @@ const refreshAccessToken = async () => {
         return
     } catch (e) {
         console.error(e)
-        logOut()
     }
 }
 
