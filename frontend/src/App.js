@@ -49,7 +49,7 @@ function App() {
 							</NavLink>
 							<NavLink className='lg:rounded-r-full flex justify-center lg:justify-start items-center sm:space-x-2 py-3 px-4 lg:px-6 lg:py-2 hover:bg-card hover:text-spotify w-1/5 lg:w-full' to='/library' activeClassName='text-spotify lg:bg-spotify lg:text-white'>
 								<span><svg xmlns="http://www.w3.org/2000/svg" className='fill-current' viewBox="0 0 24 24" width="19"><path fill="none" d="M0 0h24v24H0z"/><path d="M20.083 15.2l1.202.721a.5.5 0 0 1 0 .858l-8.77 5.262a1 1 0 0 1-1.03 0l-8.77-5.262a.5.5 0 0 1 0-.858l1.202-.721L12 20.05l8.083-4.85zm0-4.7l1.202.721a.5.5 0 0 1 0 .858L12 17.65l-9.285-5.571a.5.5 0 0 1 0-.858l1.202-.721L12 15.35l8.083-4.85zm-7.569-9.191l8.771 5.262a.5.5 0 0 1 0 .858L12 13 2.715 7.429a.5.5 0 0 1 0-.858l8.77-5.262a1 1 0 0 1 1.03 0zM12 3.332L5.887 7 12 10.668 18.113 7 12 3.332z"/></svg></span>
-								<span className='hidden sm:block'>Your Library</span>
+								<span className='hidden sm:block'>Library</span>
 							 </NavLink>
 							<NavLink className='lg:rounded-r-full flex justify-center lg:justify-start items-center sm:space-x-2 py-3 px-4 lg:px-6 lg:py-2 hover:bg-card hover:text-spotify w-1/5 lg:w-full' to='/search' activeClassName='text-spotify lg:bg-spotify lg:text-white'>
 								<span><svg xmlns="http://www.w3.org/2000/svg" className='fill-current' viewBox="0 0 24 24" width="19"><path fill="none" d="M0 0h24v24H0z"/><path d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z"/></svg></span>
@@ -113,14 +113,14 @@ export default App;
 const LoginScreen = ({loginURL}) => {
 	return (
 		<div className='max-h-screen'>
-			<div className='bg-gradient-to-r from-pink-400 via-pink-600 to-spotify h-2 w-full'></div>
-			<div className='flex justify-center px-4 md:px-12 py-24 bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100 flex-col-reverse md:flex-row'>
+			<div className='bg-gradient-to-r from-pink-400 via-pink-600 to-red-200 h-2 w-full'></div>
+			<div className='flex justify-center px-4 md:px-12 py-24 bg-gradient-to-r from-blue-100 via-red-100 to-yellow-100 flex-col-reverse md:flex-row'>
 				<div className='mx-auto pt-16 w-full md:w-1/2'>
-					<h2 className='text-5xl bg-gradient-to-r from-green-800 to-green-600 bg-clip-text text-transparent'>You are what you listen.</h2>
-					<p className='text-2xl mb-8 mt-2 leading-relaxed text-gray-800'>
-						Know which artists and songs you love the most, what constitutes your favourite tracks. And more.
+					<h2 className='text-2xl md:text-5xl bg-gradient-to-r from-green-800 to-green-600 bg-clip-text text-transparent font-bold'>You are what you listen to.</h2>
+					<p className='text-lg md:text-2xl mb-8 mt-2 leading-relaxed text-gray-700'>
+						Know which songs you listen to the most, who are your most favourite artists, what constitutes your favourite tracks, your recent mood. And more.
 					</p>
-					<a className='bg-spotify text-white rounded-full px-4 py-3.5 text-sm hover:shadow-md hover:bg-green-600 transition-all duration-300 uppercase tracking-widest' href={loginURL}>Continue with Spotify</a>
+					<a className='bg-spotify text-white rounded-full px-4 py-3.5 text-xs md:text-sm hover:shadow-md hover:bg-green-600 transition-all duration-300 uppercase tracking-widest' href={loginURL}>Continue with Spotify</a>
 				</div>
 				<div className='w-full md:w-1/2'>
 					<Dancing />

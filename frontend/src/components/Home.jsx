@@ -24,11 +24,12 @@ const getUserData = async() => 	{
 }
 
 
+
 const Home = () => 
 {
 
 	const {data, isError} = useQuery("basics", getUserData)
-	const res = useQuery("basics", getUserData)
+	useQuery("basics", getUserData)
 
 
 	if(isError){
@@ -64,14 +65,14 @@ const Home = () =>
 						<h1 className='text-center text-3xl sm:text-4xl lg:text-4xl'>
 							<span className='text-gray-500'>Hi, </span>
 							<span className='bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 text-transparent bg-clip-text'>{data[0].data.display_name}.</span>
-							👋
+							<span>👋</span>
 						</h1>
 					</div>
 					
 					
 					{/* Fave Artists */}
 					
-					<div className='mt-10 md:mt-16'>
+					<div className='mt-10 md:mt-24'>
 						<div className="flex justify-start items-center">
 							<h2 className='text-xl lg:text-2xl heading'>Artists you love the most</h2>
 						</div>
@@ -91,7 +92,7 @@ const Home = () =>
 					
 					<div className='mt-10 md:mt-20'>
 						<div className="flex justify-start items-center">
-							<h2 className='text-xl lg:text-2xl heading'>Your most favourite tracks</h2>
+							<h2 className='text-xl lg:text-2xl heading'>Your most favourite tracks of all time</h2>
 						</div>
 						<div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-x-8  gap-y-2">
 							{data[2].data.items.map(track => 

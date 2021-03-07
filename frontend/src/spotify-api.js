@@ -102,12 +102,12 @@ export const headers = {
 
 export const getUser = () => axios.get('https://api.spotify.com/v1/me', { headers })
 
-export const getUsersTop5Artists = () => axios.get('https://api.spotify.com/v1/me/top/artists?limit=4', {headers})
+export const getUsersTop5Artists = () => axios.get('https://api.spotify.com/v1/me/top/artists?limit=9&time_range=long_term', {headers})
 export const getUsersTopArtists = () => axios.get('https://api.spotify.com/v1/me/top/artists?limit=20', {headers})
 export const getUsersTopArtistsSinceWeeks = () => axios.get('https://api.spotify.com/v1/me/top/artists?limit=20&time_range=short_term', {headers})
 export const getUsersTopArtistsSinceAnYear = () => axios.get('https://api.spotify.com/v1/me/top/artists?limit=20&time_range=long_term', {headers})
 
-export const getUsersTop5Tracks = () => axios.get('https://api.spotify.com/v1/me/top/tracks?limit=4', {headers})
+export const getUsersTop5Tracks = () => axios.get('https://api.spotify.com/v1/me/top/tracks?limit=9&time_range=long_term&limit=4', {headers})
 export const getUsersTopTracks = () => axios.get('https://api.spotify.com/v1/me/top/tracks?limit=20', {headers})
 export const getUsersTopTracksSinceWeeks = () => axios.get('https://api.spotify.com/v1/me/top/tracks?limit=20&time_range=short_term', {headers})
 export const getUsersTopTracksSinceAnYear = () => axios.get('https://api.spotify.com/v1/me/top/tracks?limit=20&time_range=long_term', {headers})
@@ -147,6 +147,8 @@ export const getSong = id => axios.get(`https://api.spotify.com/v1/tracks/${id}`
 
 export const getSongFeatures = id => axios.get(`https://api.spotify.com/v1/audio-features/${id}`, {headers})
 
+export const getTracksFeatures = ids => axios.get(`https://api.spotify.com/v1/audio-features?ids=${ids}`, {headers})
+
 
 
 
@@ -171,7 +173,7 @@ export const getAnAlbumsTracks = id => axios.get(`https://api.spotify.com/v1/alb
 
 
 
-export const search = query => axios.get(`https://api.spotify.com/v1/search/?q=${query}&type=artist&limit=5`, {headers})
+export const search = query => axios.get(`https://api.spotify.com/v1/search/?q=${query}&type=artist,track&limit=3`, {headers})
 
 
 
