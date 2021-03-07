@@ -16,11 +16,11 @@ const gethashParams = () => {
 }
 
 const setTokenTimestamp = () => window.localStorage.setItem('spotify_token_timestamp', Date.now())
+const setLocalRefreshToken = token => window.localStorage.setItem('spotify_refresh_token', token);
 const setLocalAccessToken = token => {
     setTokenTimestamp();
     window.localStorage.setItem('spotify_access_token', token);
 }
-const setLocalRefreshToken = token => window.localStorage.setItem('spotify_refresh_token', token);
 
 
 const getTokenTimestamp = () => window.localStorage.getItem('spotify_token_timestamp')
@@ -38,6 +38,7 @@ const refreshAccessToken = async () => {
         return
     } catch (e) {
         console.error(e)
+        logOut()
     }
 }
 
