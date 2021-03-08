@@ -84,7 +84,7 @@ const Song = () =>
 
 
 	return (
-		<div className='py-24 px-3 lg:px-12'>
+		<div className='py-24 '>
 			{song && features ? 
 				<div>
 					<div className='flex items-start'>

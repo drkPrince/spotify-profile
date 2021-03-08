@@ -18,7 +18,7 @@ const Album = (props) =>
 	}, [id])
 
 	return (
-		<div className='pl-12'>
+		<div>
 			{tracks && basics ?
 				<div>
 					<div className='w-full mt-8'>
@@ -34,15 +34,16 @@ const Album = (props) =>
 								</h2>
 							</div>
 						</div>
+
 						<div className='flex text-gray-700 mb-6 text-left sticky top-0 pt-8 text-sm bg-black border-bottom'>
-							<h3 className='w-8/12'>TRACK</h3>
+							<h3 className='w-10/12'>TRACK</h3>
 							<h3 className='w-1/12'>DURATION</h3>
 						</div>
 
 						{tracks.items.map(track => 
 							<Link to={`/track/${track.id}`} key={track.id}>
 								<div className='text-gray-500 flex'>
-									<div className='w-8/12'>
+									<div className='w-10/12'>
 										<TrackItem songName={track.name} picURL={basics.images[2].url} songArtists={track.artists}/>
 									</div>
 									<div className='w-1/12'>{convertMS(track.duration_ms)}</div>

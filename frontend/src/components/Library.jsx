@@ -14,7 +14,7 @@ const Library = () =>
 {
 
 	return (
-		<div className='py-12 px-4 md:py-28 md:px-12'>
+		<div className='py-12 md:py-28 '>
 			<div className="flex text-gray-500 space-x-8 mb-12">
 				<NavLink activeClassName='active-tab' className='hover:text-gray-200 text-sm md:text-base' exact to='/library'>Liked</NavLink>
 				<NavLink activeClassName='active-tab' className='hover:text-gray-200 text-sm md:text-base' to='/library/playlist'>Playlists</NavLink>

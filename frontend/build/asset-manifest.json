@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.169b5d47.chunk.css",
-    "main.js": "/static/js/main.91cbabde.chunk.js",
-    "main.js.map": "/static/js/main.91cbabde.chunk.js.map",
+    "main.css": "/static/css/main.00226f78.chunk.css",
+    "main.js": "/static/js/main.978569c0.chunk.js",
+    "main.js.map": "/static/js/main.978569c0.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.248907bc.js",
     "runtime-main.js.map": "/static/js/runtime-main.248907bc.js.map",
     "static/js/2.a0cd8c0b.chunk.js": "/static/js/2.a0cd8c0b.chunk.js",
     "static/js/2.a0cd8c0b.chunk.js.map": "/static/js/2.a0cd8c0b.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.169b5d47.chunk.css.map": "/static/css/main.169b5d47.chunk.css.map",
+    "static/css/main.00226f78.chunk.css.map": "/static/css/main.00226f78.chunk.css.map",
     "static/js/2.a0cd8c0b.chunk.js.LICENSE.txt": "/static/js/2.a0cd8c0b.chunk.js.LICENSE.txt",
     "static/media/custom.css": "/static/media/Circular Std Book.ce173167.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.248907bc.js",
     "static/js/2.a0cd8c0b.chunk.js",
-    "static/css/main.169b5d47.chunk.css",
-    "static/js/main.91cbabde.chunk.js"
+    "static/css/main.00226f78.chunk.css",
+    "static/js/main.978569c0.chunk.js"
   ]
 }

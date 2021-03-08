@@ -96,25 +96,24 @@ const ArtistInfo = () => {
 						<h2 className='text-2xl heading mb-1'>Top Tracks Of {basicInfo.name} </h2>
 
 						<div className="table flex justify-between w-full">
-							<div className="flex text-gray-700 text-sm mb-4 tracking-wider sticky top-0 pt-8 bg-black border-bottom" >
-								<div className='w-12/12 lg:w-6/12'>TRACK</div>
-								<div className='hidden lg:block w-5/12'>ALBUM</div>
-								<div className='hidden lg:block w-1/12'>DURATION</div>
-							</div>
+							<div className="w-4/4 lg:w-auto flex justify-between text-gray-700 mb-4 tracking-wider text-sm border-gray-800 sticky top-0 pt-8 bg-black border-bottom">
+									<div className='w-12/12 lg:w-7/12 text-left'>TRACK</div>
+									<div className='w-4/12 hidden lg:block text-left'>ALBUM</div>
+									<div className='w-1/12 hidden lg:block text-left'>DURATION</div>
+								</div>
+					
 
-							<div className="body mt-6">
-								{topTracks.map(song => 
-									<div className="row flex" key={song.id}>
-										<div className='w-12/12 lg:w-6/12'>
-											<Link to={`/track/${song.id}`}>
-												<TrackItem picURL={song.album.images[2].url} songName={song.name} songArtists={song.album.artists}/>
-											</Link>
-										</div>
-										<div className='hidden lg:block w-5/12 text-gray-400 pr-4'>{song.album.name}</div>
-										<div className='hidden lg:block w-1/12 text-gray-400'>{convertMS(song.duration_ms)}</div>
+							{topTracks.map(song => 
+								<div className="lg:flex text-gray-400 justify-between w-full" key={song.played_at}>
+									<div className="w-12/12 lg:w-7/12 truncate">
+										<Link to={`/track/${song.id}`}>
+											<TrackItem songName={song.name} songArtists={song.artists} songAlbum={song.album.name} picURL={song.album.images[1].url}/>
+										</Link>
 									</div>
-								)}
-							</div>
+									<div className='w-4/12 hidden lg:block pr-4'>{song.album.name}</div>
+									<div className='w-1/12 hidden lg:block'>{convertMS(song.duration_ms)}</div>
+								</div>
+							)}
 
 						</div>
 					</div>
