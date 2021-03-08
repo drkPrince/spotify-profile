@@ -22,7 +22,7 @@ const Search = () => {
 
 	
 	return (
-		<div className='py-24 min-h-screen'>
+		<div className='py-24 min-h-screen px-3'>
 			<div>
 				<div className='flex flex-col justify-center'>
 					<h3 className='text-5xl heading mr-4'>Search</h3>

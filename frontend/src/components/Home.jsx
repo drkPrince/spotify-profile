@@ -41,7 +41,7 @@ const Home = () =>
 
 
 	return (
-		<>	
+		<div>	
 			<div className="flex justify-end pt-8">
 				<div className='flex items-center'>
 					<div className='flex items-center mr-4 text-gray-600 hover:text-gray-400 cursor-pointer'>
@@ -60,7 +60,7 @@ const Home = () =>
 
 			{/* Hero */}
 			{data ? 
-				<main className='pb-12'>
+				<main className='pb-12 px-3'>
 					<div className='pt-12'>
 						<h1 className='text-center text-3xl sm:text-4xl lg:text-4xl'>
 							<span className='text-gray-500'>Hi, </span>
@@ -76,7 +76,7 @@ const Home = () =>
 						<div className="flex justify-start items-center">
 							<h2 className='text-xl lg:text-2xl heading'>Artists you love the most</h2>
 						</div>
-						<div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-x-8 gap-y-2">
+						<div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-x-4 gap-y-2">
 							{data[1].data.items.map(artist => 
 								<Link to={`artist/${artist.id}`} key={artist.id}>
 									<SingleCard imageURL={artist.images[1].url} itemName={artist.name} key={artist.name}/>
@@ -114,32 +114,32 @@ const Home = () =>
 						<div className='mt-1 w-full'>
 							<div className="table flex justify-between w-full">
 					
-								<div className="w-3/4 lg:w-auto flex justify-between text-gray-700 mb-4 tracking-wider text-sm border-gray-800 sticky top-0 pt-8 bg-black border-bottom">
+								<div className="w-4/4 lg:w-auto flex justify-between text-gray-700 mb-4 tracking-wider text-sm border-gray-800 sticky top-0 pt-8 bg-black border-bottom">
 									<div className='w-12/12 lg:w-7/12 text-left'>TRACK</div>
 									<div className='w-4/12 hidden lg:block text-left'>ALBUM</div>
 									<div className='w-1/12 hidden lg:block text-left'>DURATION</div>
 								</div>
 					
-								<div className="mt-6">
+								<span className="inline-block w-full">
 									{data[5].data.items.map(song => 
-										<div className="lg:flex text-gray-400 justify-between" key={song.played_at}>
-											<div className='lg:w-7/12 truncate overflow-x-hidden'>
-												<Link to={`track/${song.track.id}`}>
-													<TrackItem picURL={song.track.album.images[2].url} songName={song.track.name} songArtists={song.track.artists}/>
+										<div className="lg:flex text-gray-400 justify-between w-full" key={song.played_at}>
+											<div className="w-12/12 lg:w-7/12 truncate">
+												<Link to={`/track/${song.track.id}`}>
+													<TrackItem songName={song.track.name} songArtists={song.track.artists} songAlbum={song.track.album.name} picURL={song.track.album.images[1].url}/>
 												</Link>
 											</div>
 											<div className='w-4/12 hidden lg:block pr-4'>{song.track.album.name}</div>
 											<div className='w-1/12 hidden lg:block'>{convertMS(song.track.duration_ms)}</div>
 										</div>
 									)}
-								</div>
+								</span>
 							</div>
 						</div>
 					</div>
 				</main>
 				:
 				<div className='loader w-full h-full' />}
-		</>
+		</div>
 	)
 }
 
