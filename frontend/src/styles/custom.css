@@ -40,6 +40,7 @@ body{
     height: 1em;
     border-radius: 50%;
     margin: 72px auto;
+    margin-top: 200px;
     position: relative;
     -webkit-transform: translateZ(0);
     -ms-transform: translateZ(0);

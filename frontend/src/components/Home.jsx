@@ -7,24 +7,15 @@ import {getUser, getUsersTop5Artists, getFollowing, getUsersTop5Tracks, getPlayl
 
 
 const getUserData = async() => 	{
-	try{
-		const user = await getUser()	
-		const topArtists =  await getUsersTop5Artists()
-		const topTracks =  await getUsersTop5Tracks()
-		const following = await getFollowing()
-		const playlists = await getPlaylists()
-		const recentlyPlayed = await getRecentlyPlayed()
+	
+	const user = await getUser()	
+	const topArtists =  await getUsersTop5Artists()
+	const topTracks =  await getUsersTop5Tracks()
+	const following = await getFollowing()
+	const playlists = await getPlaylists()
+	const recentlyPlayed = await getRecentlyPlayed()
 
-		return Promise.all([user, topArtists, topTracks, following, playlists, recentlyPlayed])
-	}
-
-	catch(e){
-		console.log(e)
-		return <div>
-				Something went wrong. 
-				<a href="http://localhost:5000/login">Please try again.</a>	
-			</div>
-	}
+	return Promise.all([user, topArtists, topTracks, following, playlists, recentlyPlayed])
 }
 
 
@@ -32,17 +23,17 @@ const getUserData = async() => 	{
 const Home = () => 
 {
 
-	const {data, isError} = useQuery("basics", getUserData)
+	const {data} = useQuery("basics", getUserData)
+
 	useQuery("basics", getUserData)
 
-
-	if(isError){
-		return <div>
-				Something went wrong. 
-				<a href="http://localhost:5000/login">Please try again.</a>	
-			</div>
+	if(data === undefined){
+		return <div className='loader' />
 	}
 
+	if(data[0]?.status !== 200){
+		logOut()
+	}
 
 	return (
 		<div>	
@@ -62,15 +53,15 @@ const Home = () =>
 			</div>
 			
 
-			{/* Hero */}
 			{data ? 
 				<main className='pb-12'>
+				
+					{/* Hero */}
 					<div className='pt-10'>
 						<h1 className='text-center text-3xl sm:text-4xl lg:text-4xl'>
 							<span className='text-gray-500'>Hi, </span>
 							<span className='bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 text-transparent bg-clip-text'>{data[0].data.display_name}.</span>
 							<span>👋</span>
-
 						</h1>
 					</div>
 					
@@ -139,7 +130,7 @@ const Home = () =>
 					</div>
 				</main>
 				:
-				<div className='loader w-full h-full' />}
+				<div className='loader' />}
 		</div>
 	)
 }
@@ -148,42 +139,3 @@ export default Home
 
 
 
-/* 
-
-<div className='flex justify-start mt-12'>
-	<div className='flex mt-10 space-x-12'>
-		<div className='flex flex-col'>
-			<h2 className='text-xs text-gray-400 tracking-wider'>FOLLOWERS</h2>
-			<h3 className='text-4xl text-spotify'>{data[0].data.followers.total}</h3>
-		</div>
-		<div className='flex flex-col'>
-			<h2 className='text-xs text-gray-400 tracking-wider'>FOLLOWING</h2>
-			<h3 className='text-4xl text-spotify'>{data[3].data.artists.total}</h3>
-		</div>
-		<div className='flex flex-col'>
-			<h2 className='text-xs text-gray-400 tracking-wider'>PLAYLISTS</h2>
-			<h3 className='text-4xl text-spotify'>{data[4].data.total}</h3>
-		</div>
-	</div>	
-</div>
-
-
-
-<div className='pt-12'>
-	<div>
-		<div className='flex justify-center items-center'>
-			<div className='rounded-full w-20 h-20 lg:w-32 lg:h-32 rounded-full overflow-hidden'>
-				<img src={data[0].data.images[0].url} alt="user" />
-			</div>
-		</div>
-		<h1 className='text-center mt-7 text-3xl sm:text-4xl lg:text-5xl ml-6 '>
-			<span className='text-gray-500'>Welcome, </span>
-			<span className='bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 text-transparent bg-clip-text'>{data[0].data.display_name}.</span>
-		</h1>
-	</div>
-</div>
-
-
-
-
- */

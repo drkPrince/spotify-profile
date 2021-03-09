@@ -1,8 +1,6 @@
 
 import Home from './components/Home'
 
-import Dancing from './components/Dancing'
-
 import Artist from './components/Artist'
 import TopArtists from './components/TopArtists'
 
@@ -12,6 +10,8 @@ import TopTracks from './components/TopTracks'
 import Library from './components/Library'
 
 import Search from './components/Search'
+
+import Mood from './components/Mood'
 
 import {NavLink, BrowserRouter, Switch, Route} from 'react-router-dom'
 
@@ -33,7 +33,7 @@ function App() {
         <div className="App">
         	{accessToken ? 
 	        	<BrowserRouter>
-	        		<div className="z-50 fixed bottom-0 lg:left-0 w-full lg:w-48 bg-black shadow-inner lg:h-screen text-white lg:pt-16">
+	        		<div className="z-50 fixed bottom-0 border-t-2 border-card lg:left-0 w-full lg:w-48 bg-black shadow-inner lg:h-screen text-white lg:pt-16">
 						<div className='lg:mt-16 lg:space-y-4 flex lg:flex-col justify-between h-auto'>
 							<NavLink className='lg:rounded-r-full flex justify-center lg:justify-start items-center sm:space-x-2 py-3 px-4 lg:px-6 lg:py-2 hover:bg-card hover:text-spotify w-1/5 lg:w-full' exact to='/' activeClassName='text-spotify lg:bg-spotify lg:text-white'>
 								<span><svg xmlns="http://www.w3.org/2000/svg" className='fill-current' viewBox="0 0 24 24" width="19"><path fill="none" d="M0 0h24v24H0z"/><path d="M4 22a8 8 0 1 1 16 0h-2a6 6 0 1 0-12 0H4zm8-9c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"/></svg></span>
@@ -90,6 +90,10 @@ function App() {
 			        				<Search />
 			        			</Route>
 
+			        			<Route path='/mood'>
+			        				<Mood />
+			        			</Route>
+
 			        		</Switch>
 						</div>
 				    </QueryClientProvider>
@@ -107,24 +111,21 @@ function App() {
 export default App;
 
 
-
-
 const LoginScreen = ({loginURL}) => {
 	return (
-		<div className='max-h-screen'>
+		<div className='max-h-screen overflow-hidden'>
 			<div className='bg-gradient-to-r from-pink-400 via-pink-600 to-red-200 h-2 w-full'></div>
-			<div className='flex justify-center px-4 md:px-12 py-24 bg-gradient-to-r from-blue-100 via-red-100 to-yellow-100 flex-col-reverse md:flex-row'>
-				<div className='mx-auto pt-16 w-full md:w-1/2'>
-					<h2 className='text-2xl md:text-5xl bg-gradient-to-r from-green-800 to-green-600 bg-clip-text text-transparent font-bold'>You are what you listen to.</h2>
-					<p className='text-lg md:text-2xl mb-8 mt-2 leading-relaxed text-gray-700'>
-						Know which songs you listen to the most, who are your most favourite artists, what constitutes your favourite tracks, your recent mood. And more.
+
+			<div className='flex justify-center px-4 md:px-12 py-16 md:py-24 bg-gradient-to-r from-blue-100 via-red-100 to-yellow-100 h-screen'>
+				<div className='mx-3 sm:mx-12 md:mx-32 lg:mx-56 pt-8 md:pt-16 w-full '>
+					<h2 className='text-2xl md:text-5xl bg-gradient-to-r from-green-800 to-green-600 bg-clip-text text-transparent'>You are what you listen to.</h2>
+					<p className='text-lg md:text-xl md:leading-relaxed mb-8 mt-2 text-gray-700'>
+						Know which songs you listen to the most, who are your most favourite artists, what constitutes your favourite tracks, get recs based on your mood. And more.
 					</p>
-					<a className='bg-spotify text-white rounded-full px-4 py-3.5 text-xs md:text-sm hover:shadow-md hover:bg-green-600 transition-all duration-300 uppercase tracking-widest' href={loginURL}>Continue with Spotify</a>
-				</div>
-				<div className='w-full md:w-1/2'>
-					<Dancing />
+					<a className='w-full block sm:inline text-center sm:w-auto bg-spotify text-white rounded-full px-4 py-3 text-xs md:text-sm hover:shadow-md hover:bg-green-600 transition-all duration-300 uppercase tracking-widest' href={loginURL}>Continue with Spotify</a>
 				</div>
 			</div>
+
 		</div>
 	)
 }

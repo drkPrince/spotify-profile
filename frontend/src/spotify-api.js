@@ -42,32 +42,37 @@ const refreshAccessToken = async () => {
 }
 
 const getAccessToken = () => {
-    const {error, access_token, refresh_token} = gethashParams()
-    if (error) {
-        console.error(error)
-        refreshAccessToken()
+    try{
+        const {error, access_token, refresh_token} = gethashParams()
+        if (error) {
+            console.error(error)
+            refreshAccessToken()
+        }
+
+        if (Date.now() - getTokenTimestamp() > EXPIRATION_TIME) {
+            console.warn('Access token has expired, REFRESHING...')
+            refreshAccessToken()
+        }
+
+        const localAccessToken = getLocalAccessToken()
+        const localRefreshToken = getLocalRefreshToken()
+
+        // If there is no REFRESH token in local storage, set it as `refresh_token` from params
+        if (!localRefreshToken || localRefreshToken === 'undefined') {
+            setLocalRefreshToken(refresh_token)
+        }
+
+        // If there is no ACCESS token in local storage, set it and return `access_token` from params
+        if (!localAccessToken || localAccessToken === 'undefined') {
+            setLocalAccessToken(access_token)
+            return access_token
+        }
+        return localAccessToken
     }
 
-    if (Date.now() - getTokenTimestamp() > EXPIRATION_TIME) {
-        console.warn('Access token has expired, REFRESHING...')
-        refreshAccessToken()
+    catch(e){
+        logOut()
     }
-
-    const localAccessToken = getLocalAccessToken()
-    const localRefreshToken = getLocalRefreshToken()
-
-    // If there is no REFRESH token in local storage, set it as `refresh_token` from params
-    if (!localRefreshToken || localRefreshToken === 'undefined') {
-        setLocalRefreshToken(refresh_token)
-    }
-
-    // If there is no ACCESS token in local storage, set it and return `access_token` from params
-    if (!localAccessToken || localAccessToken === 'undefined') {
-        setLocalAccessToken(access_token)
-        return access_token
-    }
-
-    return localAccessToken
 }
 
 
@@ -173,6 +178,11 @@ export const getAnAlbumsTracks = id => axios.get(`https://api.spotify.com/v1/alb
 
 
 export const search = query => axios.get(`https://api.spotify.com/v1/search/?q=${query}&type=artist,track&limit=3`, {headers})
+
+
+// export const getRex = (genreList, minEnergy, maxEnergy, minValence, maxValence) => axios.get(`https://api.spotify.com/v1/recommendations?min_popularity=70&seed_genres=${genreList}&min_energy=${minEnergy}&max_energy=${maxEnergy}&min_valence=${minValence}&max_valence=${maxValence}`, {headers})
+export const getRex = (genre, props) => axios.get(`https://api.spotify.com/v1/recommendations?min_popularity=60&market=IN&seed_genres=${genre}&${props}`, {headers})
+
 
 
 

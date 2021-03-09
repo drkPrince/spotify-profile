@@ -1,53 +1,12 @@
-import React, {useState, useEffect} from 'react'
-import {search} from '../spotify-api'
-import {Link} from 'react-router-dom'
 
+import SimpleSearch from './SimpleSearch'
+import Mood from './Mood'
 
 const Search = () => {
-	const [query, setQuery] = useState('')
-	const [artists, setArtists] = useState(null)
-	const [tracks, setTracks] = useState(null)
-
-	useEffect(() => {
-		if(query!=='')
-		{
-			search(query.replace(' ', '+'))
-			.then(res => {
-				setTracks(res.data.tracks.items)
-				setArtists(res.data.artists.items)
-			})
-		}
-	}, [query])
-
-
-	
 	return (
-		<div className='py-24 min-h-screen'>
-			<div>
-				<div className='flex flex-col justify-center'>
-					<h3 className='text-5xl heading mr-4'>Search</h3>
-					<input className='mt-3 text-2xl py-1 w-56 lg:w-64 outline-none bg-transparent border-2 border-blue-800 rounded-full text-gray-400 px-3' type="text" value={query} onChange={(e)=>setQuery(e.target.value)} />
-				</div>
-				
-				{tracks && artists ? 
-					<div className=' w-1/2 mt-3'>
-						<h3>Artists</h3>
-						{artists.map(result => 
-							<Link to={`/artist/${result.id}`}>
-								<div className='pl-3 text-gray-700 text-sm py-1 text-lg hover:text-white'>{result.name}</div>
-							</Link>
-					    )}
-					    <h3>Tracks</h3>
-					    {tracks.map(result => 
-							<Link to={`/track/${result.id}`}>
-								<div className='pl-3 text-gray-700 text-sm py-1 text-lg hover:text-white'>{result.name}</div>
-							</Link>
-					    )}
-
-					</div>
-					:
-				null}
-			</div>
+		<div>
+			<SimpleSearch />
+			<Mood />
 		</div>
 	)
 }
