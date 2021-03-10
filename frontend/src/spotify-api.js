@@ -30,8 +30,9 @@ const getLocalRefreshToken = () => window.localStorage.getItem('spotify_refresh_
 const EXPIRATION_TIME = 3600 * 1000 // 3600 seconds * 1000 = 1 hour in milliseconds
 
 const refreshAccessToken = async () => {
+    const refreshURI = process.NODE_ENV === 'production' ? 'sprofile.herokuapp.com' : 'localhost:5000'
     try {
-        const { data } = await axios.get(`http://localhost:5000/refresh_token?refresh_token=${getLocalRefreshToken()}`)
+        const { data } = await axios.get(`http://${refreshURI}/refresh_token?refresh_token=${getLocalRefreshToken()}`)
         const { access_token } = data
         setLocalAccessToken(access_token)
         window.location.reload()
