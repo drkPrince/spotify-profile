@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node backend/server",
-    "heroku-postbuild": "cd client/ && yarn && yarn install --production && yarn build"
+    "heroku-postbuild": "cd frontend/ && yarn && yarn install --production && yarn build"
   },
   "engines": {
     "node": "12.18.3"
