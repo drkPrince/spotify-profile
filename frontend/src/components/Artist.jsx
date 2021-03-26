@@ -120,7 +120,7 @@ const ArtistInfo = () => {
 
 					<div className='mt-20'>
 						<h3 className='text-2xl heading mb-1'>Latest Albums</h3>
-						<div className="flex flex-wrap">
+						<div className="grid grid-cols-2 md:grid-cols-5">
 							{newAlbums.slice(0, 5).map(album => 
 								{	
 									if(album)
@@ -139,7 +139,7 @@ const ArtistInfo = () => {
 
 					<div className='mt-24'>
 						<h3 className='text-2xl heading mb-1'>You will also like</h3>
-						<div className="flex flex-wrap">
+						<div className="grid grid-cols-2 md:grid-cols-5">
 							{
 								related.slice(0, 5).map(relatedArtist => 
 									<Link to={`/artist/${relatedArtist.id}`} key={relatedArtist.id}>

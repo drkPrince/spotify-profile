@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node backend/server",
-    "heroku-postbuild": "cd frontend && npm install && npm run build"
+    "start": "node backend/server"
   },
   "engines": {
     "node": "12.18.3"
