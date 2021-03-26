@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node backend/server",
-    "heroku-postbuild": "cd frontend/ && npm install --production && npm run build"
+    "heroku-postbuild": "cd frontend && yarn && yarn install && yarn build",
+    "prestart": "cd frontend && npm install && npm run build"
   },
   "engines": {
     "node": "12.18.3"
