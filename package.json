@@ -4,16 +4,16 @@
   "description": "A Spotify Profile App made with React, Express and Node.",
   "main": "index.js",
   "scripts": {
-    "start": "node backend/server"
-  },
-  "engines": {
-    "node": "12.18.3",
+    "start": "node backend/server",
     "build": "cd frontend && npm run build",
     "install-client": "cd client && npm install",
     "heroku-postbuild": "npm run install-client && npm run build"
   },
+  "engines": {
+    "node": "12.18.3",
+  },
   "keywords": [],
-  "author": "",
+  "author": "Prince Kumar Singh",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
