@@ -1,8 +1,8 @@
 # 🎶 Sprofile - A Spotify Profile App
 
-![React](https://img.shields.io/badge/React-17.0.1-blue)
-![Tailwind](https://img.shields.io/badge/Tailwind-2.0.3-blueviolet)
+![React](https://img.shields.io/badge/React-17.0.1-61dafb)
 ![Express](https://img.shields.io/badge/Express-4.17.1-9cf)
+![Tailwind](https://img.shields.io/badge/Tailwind-2.0.3-06b6d4)
 
 Sprofile is a fully responsive web app built using **React, Tailwind, Chart.js, Node, Express and Spotify API** which provides personalised data using your Spotify account.
 
@@ -33,7 +33,8 @@ With Sprofile, you can know -
 ### Track Features
 <img src="https://github.com/drkPrince/spotify-profile/blob/main/screenshots/trackFeatures.png" />
 
-
+## Author
+[Prince Kumar Singh](http://www.twitter.com/drkprns)
 
 ## Disclaimer
 This is ***not*** an officially Spotify supported app. I made this just for learning purposes using the official Spotify API. Therefore, no copyright infringement is intended.

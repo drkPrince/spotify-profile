@@ -1,13 +1,16 @@
 {
-  "name": "sprofileX",
+  "name": "sprofile",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Spotify Profile App made with React, Express and Node.",
   "main": "index.js",
   "scripts": {
     "start": "node backend/server"
   },
   "engines": {
-    "node": "12.18.3"
+    "node": "12.18.3",
+    "build": "cd frontend && npm run build",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build"
   },
   "keywords": [],
   "author": "",

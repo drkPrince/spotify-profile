@@ -116,13 +116,16 @@ const LoginScreen = ({loginURL}) => {
 		<div className='max-h-screen overflow-hidden'>
 			<div className='bg-gradient-to-r from-pink-400 via-pink-600 to-red-200 h-2 w-full'></div>
 
-			<div className='flex justify-center px-4 md:px-12 py-16 md:py-24 bg-gradient-to-r from-blue-100 via-red-100 to-yellow-100 h-screen'>
-				<div className='mx-3 sm:mx-12 md:mx-32 lg:mx-56 pt-8 md:pt-16 w-full '>
+			<div className='flex flex-col-reverse sm:flex-row px-4 md:px-12 py-16 md:py-24 bg-gradient-to-r from-blue-100 via-red-100 to-yellow-100 h-screen'>
+				<div className='w-full sm:w-7/12 pt-16'>
 					<h2 className='text-2xl md:text-5xl bg-gradient-to-r from-green-800 to-green-600 bg-clip-text text-transparent'>You are what you listen to.</h2>
 					<p className='text-lg md:text-xl md:leading-relaxed mb-8 mt-2 text-gray-700'>
-						Know which songs you listen to the most, who are your most favourite artists, what constitutes your favourite tracks, get recs based on your mood. And more.
+						Know which songs you listen to the most, who are your most favourite artists, what constitutes your favourite tracks, get song recommendations based on your mood. And more.
 					</p>
 					<a className='w-full block sm:inline text-center sm:w-auto bg-spotify text-white rounded-full px-4 py-3 text-xs md:text-sm hover:shadow-md hover:bg-green-600 transition-all duration-300 uppercase tracking-widest' href={loginURL}>Continue with Spotify</a>
+				</div>
+				<div className='sm:w-5/12 flex justify-center items-center'>
+					<img className='w-full ' src={require('./styles/Girl.png').default} alt="girl" />
 				</div>
 			</div>
 
