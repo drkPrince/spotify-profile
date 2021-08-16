@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3a847187.chunk.css",
+    "main.js": "/static/js/main.ced3557b.chunk.js",
+    "main.js.map": "/static/js/main.ced3557b.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.248907bc.js",
+    "runtime-main.js.map": "/static/js/runtime-main.248907bc.js.map",
+    "static/js/2.b66a93a3.chunk.js": "/static/js/2.b66a93a3.chunk.js",
+    "static/js/2.b66a93a3.chunk.js.map": "/static/js/2.b66a93a3.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.3a847187.chunk.css.map": "/static/css/main.3a847187.chunk.css.map",
+    "static/js/2.b66a93a3.chunk.js.LICENSE.txt": "/static/js/2.b66a93a3.chunk.js.LICENSE.txt",
+    "static/media/custom.css": "/static/media/Circular Std Book.ce173167.ttf",
+    "static/media/Girl.png": "/static/media/Girl.556ede44.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.248907bc.js",
+    "static/js/2.b66a93a3.chunk.js",
+    "static/css/main.3a847187.chunk.css",
+    "static/js/main.ced3557b.chunk.js"
+  ]
+}
