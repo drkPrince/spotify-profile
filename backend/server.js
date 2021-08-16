@@ -129,17 +129,18 @@ app.get("/refresh_token", (req, res) => {
 })
 
 
-
-// ⚛ Render React
-app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../frontend/build/index.html'))
-})
-
-
-//✈ Redirect everything else to the React App
-app.get('*' , (req, res) => {
-    res.redirect('/')
-})
+if(process.env.NODE_ENV === 'production') {
+    // ⚛ Render React
+    app.get('/', (req, res) => {
+        res.sendFile(path.resolve(__dirname, '../frontend/build/index.html'))
+    })
+    
+    
+    //✈ Redirect everything else to the React App
+    app.get('*' , (req, res) => {
+        res.redirect('/')
+    })
+}
 
 
 
