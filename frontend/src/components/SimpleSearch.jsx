@@ -30,7 +30,7 @@ const Search = () => {
 			<div>
 				<div className='flex flex-col justify-center'>
 					<h3 className='text-2xl heading mr-4'>Search</h3>
-					<input className='mt-3 text-2xl py-1 w-56 lg:w-64 outline-none bg-transparent border-2 border-blue-800 rounded-full text-gray-400 px-3' type="text" value={query} onChange={(e)=>setQuery(e.target.value)} />
+					<input className='mt-3 text-2xl py-1 w-56 lg:w-64 outline-none bg-transparent border-2 border-gray-600 rounded-full text-gray-400 px-3  focus:border-spotify' type="text" value={query} onChange={(e)=>setQuery(e.target.value)} />
 				</div>
 				
 				{tracks && artists ? 

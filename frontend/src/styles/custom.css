@@ -15,6 +15,10 @@ body{
 	color: white;
 }
 
+.heading {
+  color: darkcyan;  
+}
+
 .login:hover{
   background: #f72d5c;
   color: white;

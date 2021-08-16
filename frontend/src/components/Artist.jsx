@@ -67,7 +67,7 @@ const ArtistInfo = () => {
 			{basicInfo && topTracks && albums && newAlbums && related ? 
 				<div>
 					<div className='flex flex-col justify-center'>
-						<div className='w-32 h-32 rounded-full flex justify-center items-center overflow-hidden mx-auto '>
+						<div className='w-40 h-40 rounded-full flex justify-center items-center overflow-hidden mx-auto '>
 							<img src={basicInfo.images[1].url} alt="artist" className='object-cover'/> 
 						</div>
 						<h1 className='text-white text-2xl sm:text-3xl lg:text-4xl text-center mt-3'>{basicInfo.name}</h1>

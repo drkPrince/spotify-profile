@@ -5,12 +5,13 @@ import {TrackItem} from './utils'
 
 
 const Mood = () => {
-	const moods = [{title: 'Happy', emoji: '😄'},  {title: 'Sad', emoji: '😢'}, {title: 'Energetic', emoji: '⛹'}, {title: 'Calm', emoji: '😇'}]
+	const moods = [{title: 'Happy', emoji: '😄'},  {title: 'Sad', emoji: '😢'}, {title: 'Energetic', emoji: '💪🏻'}, {title: 'Calm', emoji: '😇'}]
 	const allGenres = ['Pop','Rock','Hip-Hop', 'Electronic', 'Indie', 'Metal', 'Punk','Classical',  'Alternative',  'Chill',  'Country',  'Techno']
 
 	const [genre, setGenre] = useState(null)
 	const [mood, setMood] = useState(null)
 	const [rex, setRex] = useState(null)
+	
 
 	const setParams = (m) => {
 		let q 
@@ -50,6 +51,9 @@ const Mood = () => {
 		getRex(genre.toLowerCase(), mood.features)
 			.then(res => {
 				setRex(res.data)
+				setTimeout(() => {
+					window.scrollBy({top: 300, behavior: 'smooth'})
+				}, 300);
 			})
 	}
 
@@ -62,7 +66,7 @@ const Mood = () => {
 				<h2 className="heading mb-3">Select Mood</h2>
 				<div className='grid grid-cols-2 md:grid-cols-4 gap-3'>
 					{moods.map(m => 
-						<div className={`${mood?.mood===m.title ? 'bg-pink-900' : 'bg-card'} h-20 rounded flex justify-center items-center text-xl cursor-pointer hover:bg-gray-900`} key={m.title} onClick={() => setParams(m.title)}>
+						<div className={`${mood?.mood===m.title ? 'bg-pink-900' : 'bg-card'} h-20 rounded flex justify-center items-center text-xl cursor-pointer  hover:text-spotify`} key={m.title} onClick={() => setParams(m.title)}>
 							<h2>{m.title}</h2>
 							<h3>{m.emoji}</h3>
 						</div>	
@@ -74,7 +78,7 @@ const Mood = () => {
 				<h2 className="heading">Select Genre</h2>
 				<div className="grid grid-cols-3 gap-3 md:grid-cols-6" >
 					{allGenres.map(g => 
-						<h2 className={`${genre===g ? 'bg-pink-900' : 'bg-card'} p-3 rounded cursor-pointer hover:bg-gray-900`} key={g} onClick={() => setGenre(g)}>
+						<h2 className={`${genre===g ? 'bg-pink-900' : 'bg-card'} p-3 rounded cursor-pointer hover:text-spotify`} key={g} onClick={() => setGenre(g)}>
 							{g}
 						</h2>)}
 				</div>
@@ -83,8 +87,8 @@ const Mood = () => {
 			<button className='text-center bg-spotify px-4 py-2 rounded-full hover:bg-green-900' onClick={go}>Search</button>
 
 			{rex ?
-				<div className='mt-20'>
-					<h2 className="heading my-4">Here are some tracks you may like</h2>
+				<div className='mt-20' >
+					<h2 id='rex' className="heading my-4">Here are some tracks you may like</h2>
 					{rex.tracks.map(song => 
 						<div className='flex items-start'>
 							<TrackItem songName={song.name} songArtists={song.artists} songAlbum={song.album.name} picURL={song.album.images[1].url}/>

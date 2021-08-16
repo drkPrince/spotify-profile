@@ -47,7 +47,7 @@ const Podcast = () =>
 						</div>
 					</div>
 
-					<p className='text-gray-600 leading-loose mt-6'>
+					<p className='text-gray-500 leading-loose mt-6'>
 						{pod.description}
 					</p>
 
@@ -61,7 +61,7 @@ const Podcast = () =>
 
 						{eps.map(ep => 
 							<div className='text-gray-500 flex py-4' key={ep.id}>
-								<div className='w-10/12 lg:w-7/12'>
+								<div className='w-10/12 lg:w-7/12 text-gray-200'>
 									{ep.name}
 								</div>
 								<div className='hidden lg:block w-2/12'>{ep.release_date}</div>

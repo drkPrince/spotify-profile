@@ -4,8 +4,8 @@ module.exports = {
    theme: {
     extend: {
     	colors: {
-    	spotify: '#1DB954',
-        card: 'rgba(8, 8, 8, 0.8)',
+    	  spotify: '#1DB954',
+        card: 'rgba(9, 9, 9, 0.9)',
     	}
     },
   },

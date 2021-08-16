@@ -22,9 +22,6 @@
     "postcss": "^7",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   },
-  "engines": {
-    "node": "12.18.3"
-  },
   "scripts": {
     "start": "craco start",
     "build": "craco build",

@@ -57,7 +57,7 @@ const Home = () =>
 				<main className='py-8 md:pb-12'>
 				
 					{/* Hero */}
-					<div className='pt-10'>
+					<div className='py-10'>
 						<h1 className='text-center text-3xl sm:text-4xl lg:text-4xl'>
 							<span className='text-gray-500'>Hi, </span>
 							<span className='bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 text-transparent bg-clip-text'>{data[0].data.display_name}.</span>

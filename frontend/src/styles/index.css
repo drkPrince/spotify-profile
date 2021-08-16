@@ -3,10 +3,6 @@
 @tailwind utilities;
 
 @layer components {
-	.heading {
-		@apply text-transparent bg-clip-text bg-gradient-to-l from-blue-700 via-blue-800 to-blue-900;
-	}
-
 	.border-bottom {
 		@apply border-b border-gray-800;
 	}
