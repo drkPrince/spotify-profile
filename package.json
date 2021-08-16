@@ -7,7 +7,7 @@
     "start": "node backend/server",
     "dev": "nodemon backend/server.js && cd frontend && yarn start",
     "install-client": "cd frontend && npm install",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false YARN_PRODUCTION=false yarn install --prefix frontend && yarn install --prefix backend && cd frontend && yarn build"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false YARN_PRODUCTION=false yarn install --prefix frontend && yarn install --prefix backend"
   },
   "keywords": [],
   "author": "Prince Kumar Singh",
